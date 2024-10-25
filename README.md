@@ -1,5 +1,5 @@
 ## 🎮 Demo
-Clique aqui: [Retro Search - Demo](https://ijrodrigues.github.io/retro-search/)
+Clique aqui: [Retro Search - Demo](https://gustavoavila646.github.io/retro-search/)
 
 # Retro Search
 
@@ -15,27 +15,6 @@ Este projeto foi desenvolvido usando apenas:
 - **HTML5**
 - **CSS3**
 - **JavaScript (ES6+)**
-
-## 🛠️ Como Executar Localmente
-
-1. Clone o repositório:
-   git clone https://github.com/ijrodrigues/retro-search.git
-
-2. Navegue até o diretório do projeto:
-   cd retro-search
-
-3. Abra o arquivo index.html
-  Você pode abrir o arquivo index.html diretamente em seu navegador para visualizar o projeto.
-
-## 💡 Como Contribuir
-Se você quiser contribuir com melhorias, novas funcionalidades ou correções de bugs, siga as etapas abaixo:
-
-Faça um fork deste repositório.
-Crie uma nova branch para a sua feature (git checkout -b feature/nova-feature).
-Faça commit das suas alterações (git commit -m 'Adicionar nova feature').
-Faça push para a branch (git push origin feature/nova-feature).
-Abra um Pull Request.
-
 
 ## 📜 Licença
 Este projeto está licenciado sob os termos da licença MIT.
