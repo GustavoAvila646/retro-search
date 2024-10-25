@@ -1,0 +1,445 @@
+/* Importando a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Estilo do fundo e das estrelas */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.estrelas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.estrela {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkling 2s infinite, moveStar 30s linear infinite;
+}
+
+@keyframes twinkling {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveStar {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, 50px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Estilo da nave */
+.nave {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid #FFD700;
+    transition: left 0.1s linear;
+}
+
+@keyframes moverNave {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-30px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Estilo dos tiros */
+.tiro {
+    position: fixed;
+    bottom: 20px;
+    width: 2px;
+    height: 10px;
+    background-color: #FF0066;
+    animation: moverTiro 2s linear infinite;
+}
+
+@keyframes moverTiro {
+    0% {
+        bottom: 50px;
+        opacity: 1;
+    }
+    50% {
+        bottom: 50%;
+        opacity: 1;
+    }
+    90% {
+        bottom: 95%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+/* Estilo do alien */
+.alien {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    animation: moverAlien 30s linear infinite;
+    width: 50px;
+    height: 80px;
+    user-select: none;
+}
+
+.alien2 {
+    position: absolute;
+    top: 5px;
+    left: -5%;
+    animation: moverAlien 15s linear infinite;
+    width: 80px;
+    height: 80px;
+    user-select: none;
+}
+
+@keyframes moverAlien4 {
+    0% {
+        transform: translateX(0) translateY(500px); /* Início do movimento */
+    }
+    25% {
+        transform: translateX(calc(25vw)) translateY(200px); /* Movimento para direita e para baixo */
+    }
+    50% {
+        transform: translateX(calc(50vw)) translateY(-20px); /* Movimento para direita e para cima */
+    }
+    75% {
+        transform: translateX(calc(75vw)) translateY(250px); /* Movimento para direita e para baixo */
+    }
+    100% {
+        transform: translateX(calc(100vw)) translateY(0); /* Final do movimento, volta à posição inicial */
+    }
+}
+
+.alien4 {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    animation: moverAlien4 5s linear infinite;
+    width: 100px;
+    height: 100px;
+    user-select: none;
+}
+
+.alien3 {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    animation: moverAlien3 10s linear infinite;
+    width: 100px;
+    height: 100px;
+    user-select: none;
+}
+
+@keyframes moverAlien3 {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(calc(80vw + 10px));
+    }
+    30% {
+        transform: translateX(calc(40vw + 10px));
+    }
+    90% {
+        transform: translateX(calc(100vw + 10px));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.alien5 {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    animation: moverAlien5 20s linear infinite;
+    width: 350px;
+    height: 250px;
+    user-select: none;
+}
+
+@keyframes moverAlien5 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(2vw));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moverAlien {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(100vw + 10px));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Estilo geral da página */
+.container {
+    text-align: center;
+    padding-top: 40px;
+    z-index: 1;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+}
+
+.title {
+    user-select: none;
+    margin-bottom: 0;
+    font-size: 2em;
+    color: #FFD700;
+    text-shadow:
+            4px 4px 0 #FF0066,
+            8px 8px 0 #000;
+}
+
+input[type="text"] {
+    width: 60%;
+    margin-top: 20px;
+    padding: 8px;
+    font-size: 0.9em;
+    text-align: center;
+    border: 2px solid #FFD700;
+    background-color: black;
+    color: #00FF00;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #9d8c2f;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+.results {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.sn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Permite que o fundo fique visível */
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sn-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.sn-ear {
+    background-color: #3f3f3f;
+    border: 2px solid #333;
+    width: 10%; /* Largura menor para as orelhas */
+    height: 200px; /* Altura ajustada */
+    box-shadow: 6px 6px 0 #212121, 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.left-ear {
+    border-radius: 7px 0 0 7px;
+    z-index: 0;
+}
+
+.right-ear {
+    border-radius: 0 7px 7px 0;
+    z-index: 1;
+}
+
+.sn-center {
+    background-color: #555;
+    border: 2px solid #333;
+    height: 200px; /* Altura ajustada */
+    width: 70%; /* Largura maior para o centro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 6px 6px 0 #212121, 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.sn-image {
+    background-color: #333;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    width: 100%;
+    max-height: 100px;
+}
+
+.sn-image img {
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.sn-label {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sn-label h3 {
+    margin: 0;
+    font-size: 0.7em;
+    color: #FFD700;
+}
+
+.sn-label p {
+    font-size: 0.5em;
+    color: #FFF;
+    margin: 5px 0 0;
+    text-align: center;
+}
+
+/* Estilo do botão de reiniciar */
+.restart-button {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 90px;
+    height: 65px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    user-select: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.restart-button:hover {
+    transform: translateY(5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer{
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    padding: 10px;
+    font-size: 0.2em;
+    user-select: none;
+}
+
+#github-link{
+    color: #3fe0ff;
+    text-decoration: none;
+    text-wrap: nowrap;
+    display: inline;
+}
+
+.filters{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    margin-top: 7px;
+    padding: 5px 10px;
+    font-size: 0.6rem;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+.filter-btn:hover {
+    background-color: #FFA500;
+}
+
+.game-link{
+    text-decoration: none;
+    user-select: none;
+}
+
+.timer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 1000;
+    user-select: none;
+}
+
+.death-star {
+    position: fixed;
+    bottom: -30px;
+    left: 40%;
+    width: 100%;
+    height: 960px;
+    background-image: url('assets/clouds.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+}

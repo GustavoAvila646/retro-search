@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Game Search</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="estrelas"></div>
+<div id="nave" class="nave"></div>
+<div class="container">
+    <div id="timer" class="timer">00:00</div>
+    <h1 class="title">Retro Games</h1>
+    <input type="text" id="searchInput" placeholder="Pesquise por jogos como Sonic, Super Mário, Top Gear e etc...">
+    <div class="filters">
+        <button id="showAllBtn" class="filter-btn">Todos</button>
+        <button id="showNintendoBtn" class="filter-btn">Nintendo</button>
+        <button id="showMasterSystemBtn" class="filter-btn">Master System</button>
+        <button id="showPlayStationBtn" class="filter-btn">PlayStation</button>
+    </div>
+    <div id="results" class="results"></div>
+</div>
+
+<img id="restartButton" src="assets/reset.png" alt="Reiniciar" class="restart-button" style="display: none;">
+
+<audio id="collision-sound" src="assets/laser.wav" preload="auto"></audio>
+<audio id="death-sound" src="assets/death.wav" preload="auto"></audio>
+<audio id="darth-vader-sound" src="assets/darth-vader.mp3" preload="auto"></audio>
+<audio id="hahaha-sound" src="assets/hahaha.wav" preload="auto"></audio>
+<audio id="no-sound" src="assets/no-scream.wav" preload="auto"></audio>
+<audio id="pacman-sound" src="assets/pac-man.wav" preload="auto"></audio>
+<audio id="tartaruga-sound" src="assets/tartaruga.wav" preload="auto"></audio>
+<div class="death-star"></div>
+
+<script type="module" src="search-logic.js"></script>
+<script src="stars.js"></script>
+<script src="mini-game.js"></script>
+
+</body>
+<footer>
+    <p class="footer">Desenvolvido por Israel Rodrigues na Imersão Dev Alura + Google Gemini.
+        <br>Todos os direitos sobre os jogos, imagens e marcas mencionadas pertencem às suas respectivas empresas.
+        <br>Não há intenção de violar qualquer direito autoral ou de propriedade intelectual.
+        <br>Este projeto foi desenvolvido apenas para fins educacionais e não possui fins comerciais. </p>
+</footer>
+</html>
